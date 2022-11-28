@@ -1,0 +1,21 @@
+:host {
+  form {
+    padding: 15px 20px;
+    background-color: rgba($color: #255, $alpha: 0.2);
+    border-radius: 10px;
+
+    input {
+      width: 95%;
+      background: none;
+      border: none;
+      font-size: 18px;
+      color: var(--branco);
+      &::placeholder {
+        color: var(--branco);
+      }
+    }
+    mat-icon {
+      color: white;
+    }
+  }
+}

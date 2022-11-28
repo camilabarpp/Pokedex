@@ -1,0 +1,11 @@
+<form fxLayoutAlign="space-between center">
+  <input
+    type="text"
+    #input
+    (keyup)="search(input.value)"
+    (keydown.enter)="$event.preventDefault()"
+    placeholder="Buscar Pokemon..."
+  />
+  <mat-icon>search</mat-icon>
+</form>
+

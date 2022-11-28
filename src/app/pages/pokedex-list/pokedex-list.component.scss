@@ -1,0 +1,88 @@
+:host {
+  flex-wrap: wrap;
+
+  .pokemon {
+    background: var(--branco);
+    border-radius: 10px;
+    padding: 20px;
+    max-height: 300px;
+    margin: 10px 12px;
+
+    &-status {
+      h2 {
+        font-size: 18px;
+        font-style: italic;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-bottom: 10px;
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: lowercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      li {
+        background-color: var(--secondary-color);
+        font-size: 12px;
+        border-radius: 32px;
+        width: 75px;
+        height: 26px;
+        margin-top: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    &-image {
+      background: url(../../../assets/background/Bolinhas.svg) no-repeat;
+      padding: 26px;
+      max-width: 110px;
+      max-height: 90px;
+
+      img {
+        width: 90px;
+        height: 90px;
+      }
+    }
+  }
+
+  .search-section {
+    margin: 12px;
+  }
+
+  .modal {
+    img {
+      max-width: 100px;
+      max-height: 100px;
+    }
+  }
+
+  .pokemon-names {
+    height: 75px;
+    padding: 0 30px;
+    margin-bottom: 36px;
+
+    h1 {
+      color: var(--primary-color);
+      font-size: 32px;
+      text-transform: capitalize;
+    }
+
+    h2 {
+      position: absolute;
+      font-weight: 100;
+      font-size: 36px;
+      top: 45px;
+      left: 10px;
+      margin: 10px;
+
+      color: var(--secondary-color);
+    }
+  }
+}

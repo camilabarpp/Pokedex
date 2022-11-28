@@ -1,0 +1,14 @@
+<ng-container *ngIf="mostrar">
+  <div>
+    <div
+      class="modal"
+      ngClass.gt-md="desktop-width"
+      ngClass.md="tablet-width"
+      ngClass.lt-lg="mobile-width"
+      @modal
+    >
+      <ng-content></ng-content>
+    </div>
+    <div (click)="toggle()" @overlay class="overlay"></div>
+  </div>
+</ng-container>

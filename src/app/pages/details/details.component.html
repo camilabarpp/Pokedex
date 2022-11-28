@@ -1,0 +1,44 @@
+<app-header></app-header>
+
+<main>
+  <ng-template [ngIf]="isLoading">
+    <section class="pokemon-names" fxLayoutAlign="end end">
+      <h1 class="slideInLeft">{{ pokemon[0].name }}</h1>
+      <h2 class="slideInRight">{{ pokemon[1].names[0].name }}</h2>
+    </section>
+
+    <section class="pokemon-status">
+      <img
+        [src]="pokemon[0].sprites.other.dream_world.front_default"
+        [alt]="pokemon[0].name"
+        class="slideInDown"
+      />
+
+      <article
+        class="pokemon-status-estatistics fadeIn"
+        fxLayout="column"
+        fxLayoutAlign="space-between"
+      >
+        <section>
+          <h3>Estatistícas</h3>
+          <ol>
+            <li
+              *ngFor="let value of pokemon[0].stats"
+              fxLayoutAlign="space-between"
+            >
+              {{ value.stat.name }}
+
+              <strong>
+                {{ value.base_stat }}
+              </strong>
+            </li>
+          </ol>
+        </section>
+      </article>
+    </section>
+  </ng-template>
+
+  <div fxLayoutAlign="center space-between">
+    <img src="assets/error.svg" alt="Página não encontrada" width="100%" *ngIf="apiError"/>
+  </div>
+</main>

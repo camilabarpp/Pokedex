@@ -1,0 +1,36 @@
+.modal {
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 2px 8px #333;
+  overflow-y: hidden;
+  position: fixed;
+  height: 25%;
+  left: 50%;
+  padding: 24px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+}
+
+.overlay {
+  background: #000;
+  height: 100vh;
+  left: 0;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 10;
+}
+.mobile-width {
+  width: 60%;
+}
+
+.desktop-width {
+  width: 35%;
+}
+
+.tablet-width {
+  width: 45%;
+}
+

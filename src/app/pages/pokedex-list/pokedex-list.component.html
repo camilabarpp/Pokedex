@@ -6,17 +6,18 @@
   <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
     <div
       class="pokemon"
-      fxFlex.xl="31%"
-      fxFlex.lg="31%"
+      fxFlex.xl="46%"
+      fxFlex.lg="46%"
       fxFlex.md="45%"
       fxFlex.sm="100%"
       fxFlex.xs="100%"
+      [class.teste]="isSearching"
     >
       <a
-        (click)="modal.toggle()"
+        [routerLink]="['details', pokemon.status.id]"
+        *ngIf="pokemon.status"
         fxLayout.sm="row"
         fxLayoutAlign="space-between"
-        *ngIf="pokemon.status"
       >
         <section
           class="pokemon-status"
@@ -57,48 +58,6 @@
         </section>
       </a>
     </div>
-
-    <app-modal #modal class="modal">
-      <section
-
-      >
-        <div fxLayout="column" fxLayoutGap="20px">
-          <section class="pokemon-names" fxLayoutAlign="space-between">
-            <h1 class="slideInLeft">{{ pokemon.name }}</h1>
-            <h2 class="slideInRight">{{ pokemon.name }}</h2>
-
-            <section fxLayoutAlign="center start">
-              <img
-                [src]="pokemon.status.sprites.other.dream_world.front_default"
-                [alt]="pokemon.name"
-                class="slideInDown"
-              />
-            </section>
-          </section>
-        </div>
-        <article
-          class="pokemon-status-estatistics fadeIn"
-          fxLayout="column"
-          fxLayoutAlign="space-between"
-        >
-          <section>
-            <h3>Estatistícas</h3>
-            <ol>
-              <li
-                *ngFor="let value of pokemon.status.stats"
-                fxLayoutAlign="space-between"
-              >
-                {{ value.stat.name }}
-
-                <strong>
-                  {{ value.base_stat }}
-                </strong>
-              </li>
-            </ol>
-          </section>
-        </article>
-      </section>
-    </app-modal>
   </ng-template>
 </ng-container>
 <img

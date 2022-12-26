@@ -1,5 +1,5 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { Pokemon, Result } from './pokemon.model';
+import { Pokemon } from './pokemon.model';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
 import { PokedexApiService } from '../service/pokedex-api.service';
 import { Observable, Subscription, switchMap } from 'rxjs';

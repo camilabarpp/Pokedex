@@ -42,7 +42,7 @@
     &-image {
       background: url(../../../assets/background/Bolinhas.svg) no-repeat;
       padding: 26px;
-      max-width: 110px;
+      width: 110px !important;
       max-height: 90px;
 
       img {

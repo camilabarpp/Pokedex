@@ -1,6 +1,4 @@
-<app-header></app-header>
-
-<main>
+<main class="h-[100vh] {{colorMap.get(pokemon[0].abilities[0].ability.name)}}" *ngIf="pokemon[0]">
   <ng-template [ngIf]="isLoading">
     <section class="pokemon-names" fxLayoutAlign="end end">
       <h1 class="slideInLeft">{{ pokemon[0].name }}</h1>
@@ -33,12 +31,19 @@
               </strong>
             </li>
           </ol>
+          <p>{{ pokemon[0].abilities[0].ability.name }}</p>
         </section>
       </article>
     </section>
+    <button [routerLink]="['']">Voltar</button>
   </ng-template>
 
   <div fxLayoutAlign="center space-between">
-    <img src="assets/error.svg" alt="Página não encontrada" width="100%" *ngIf="apiError"/>
+    <img
+      src="assets/error.svg"
+      alt="Página não encontrada"
+      width="100%"
+      *ngIf="apiError"
+    />
   </div>
 </main>

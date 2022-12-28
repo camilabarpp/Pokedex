@@ -31,7 +31,7 @@
             <div fxLayout="column">
               <span>Powers</span>
               <ul *ngFor="let value of pokemon.status.types">
-                <li>
+              <li class="{{colorPowers.get(value.type.name)}}">
                   {{ value.type.name }}
                 </li>
               </ul>
@@ -41,7 +41,7 @@
               <div fxLayout="column">
                 <span>Abilities</span>
                 <ul *ngFor="let value of pokemon.status.abilities">
-                  <li>
+                  <li class="{{colorAbilities.get(value.ability.name)}}">
                     {{ value.ability.name }}
                   </li>
                 </ul>
@@ -50,7 +50,7 @@
           </div>
         </section>
 
-        <section class="pokemon-image" fxLayoutAlign="start center">
+        <section class="w-[100px]" fxLayoutAlign="start center">
           <img
             [src]="pokemon.status.sprites.other.dream_world.front_default"
             [alt]="pokemon.name"

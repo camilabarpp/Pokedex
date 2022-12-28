@@ -15,7 +15,7 @@ export class PokedexApiService {
       tap((response) => {
         response.results.forEach((responsePokemons: any) => {
           this.getPokemons(responsePokemons.url).subscribe(
-            (response) => ((responsePokemons.status = response), console.log())
+            (response) => ((responsePokemons.status = response))
           );
         });
       })

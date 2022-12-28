@@ -2,8 +2,9 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { Pokemon } from './pokemon.model';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
 import { PokedexApiService } from '../service/pokedex-api.service';
-import { Observable, Subscription, switchMap } from 'rxjs';
+import { Observable, pipe, Subscription, switchMap } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 export interface PokemonState {
   pokemonState?: Pokemon;
@@ -17,9 +18,16 @@ export class PokemonStore
   implements OnDestroy
 {
   private _subs = new Subscription();
-  constructor(private _pokemonService: PokedexApiService) {
+  constructor(
+    private _activedRoute: ActivatedRoute,
+    private _pokemonService: PokedexApiService
+  ) {
     super(initialState);
   }
+
+  pokemon: Array<any> = [];
+  private urlPokemon: string = 'https://pokeapi.co/api/v2/pokemon';
+  private urlName: string = 'https://pokeapi.co/api/v2/pokemon-species';
 
   readonly pokemonState$ = this.select(({ pokemonState }) => pokemonState);
 
@@ -27,7 +35,6 @@ export class PokemonStore
     ...state,
     pokemon: pokemon || [],
   }));
-
 
   override ngOnDestroy(): void {
     this._subs.unsubscribe();

@@ -7,14 +7,12 @@ import { MaterialModule } from '../material/material.module';
 import { RouterModule } from '@angular/router';
 import { ModalComponent } from './modal/modal.component';
 
-
 @NgModule({
   declarations: [
     HeaderComponent,
     SearchComponent,
     ModalComponent,
-
-  ],
+   ],
   imports: [
     CommonModule,
     FlexLayoutModule,
